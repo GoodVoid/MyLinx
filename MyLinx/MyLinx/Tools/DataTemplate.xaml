@@ -3,5 +3,5 @@
                     xmlns:vm="clr-namespace:MyLinx.ViewModel"
                     xmlns:view="clr-namespace:MyLinx.View"
                     >
-    
+
 </ResourceDictionary>

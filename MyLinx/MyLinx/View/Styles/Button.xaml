@@ -2,12 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     >
 
-    <SolidColorBrush x:Key="light_gray_button" Color="#3F3F40" />
-    <SolidColorBrush x:Key="very_light_gray_button" Color="#636364" />
-    <SolidColorBrush x:Key="dark_gray_button" Color="#202020" />
-    <SolidColorBrush x:Key="back" Color="#3F3F40" />
-    <SolidColorBrush x:Key="page_back" Color="#1A1A1D" />
-    <Style x:Key="BtnStyle" TargetType="RadioButton">
+    <SolidColorBrush x:Key="Roze" Color="#A799B7"></SolidColorBrush>
+    <SolidColorBrush x:Key="Sage" Color="#CACAAA"></SolidColorBrush>
+    <SolidColorBrush x:Key="Ebony" Color="#626D58"></SolidColorBrush>
+    <SolidColorBrush x:Key="Reseda" Color="#646F4B"></SolidColorBrush>
+ 
+    <Style x:Key="Radiobtn" TargetType="RadioButton">
 
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -24,7 +24,7 @@
                             CornerRadius="10">
 
                         <Border.Background>
-                            <SolidColorBrush x:Name="BorderBackground" Color="#202020" />
+                            <SolidColorBrush x:Name="BorderBackground" Color="#646F4B" />
                         </Border.Background>
 
                         <Grid>
@@ -35,7 +35,7 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     Visibility="Collapsed"
-                                    Background="White"
+                                    Background="#A799B7"
                                     CornerRadius="2" />
 
                             <ContentPresenter/>
@@ -61,8 +61,8 @@
                                 <Storyboard>
                                     <ColorAnimation Storyboard.TargetName="BorderBackground"
                                                     Storyboard.TargetProperty="Color"
-                                                    From="#202020"
-                                                    To="#3f3f40"
+                                                    From="#646F4B"
+                                                    To="#64644B"
                                                     Duration="0:0:0.1"/>
                                 </Storyboard>
                             </BeginStoryboard>
@@ -74,8 +74,8 @@
                                 <Storyboard>
                                     <ColorAnimation Storyboard.TargetName="BorderBackground"
                                                     Storyboard.TargetProperty="Color"
-                                                    From="#3f3f40"
-                                                    To="#202020"
+                                                    From="#64644B"
+                                                    To="#646F4B"
                                                     Duration="0:0:0.1" />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -93,7 +93,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#1a1a1a" />
+                                    Value="#626d58" />
 
                             <Setter Property="Visibility"
                                     TargetName="Indicator"
@@ -221,14 +221,14 @@
                             <Path x:Name="CheckMark"
                               Visibility="Collapsed"
                               Data="M 3 10 L 8 15 L 15 5"
-                              Stroke="PeachPuff"
+                              Stroke="{StaticResource Sage}"
                               StrokeThickness="2" 
                               StrokeLineJoin="Round" />
                         </Border>
 
                         <!-- Текст рядом с галочкой -->
                         <TextBlock Text="{TemplateBinding Content}"
-                               FontFamily="/View/Resource/Fonts/#Mariupol"
+                               FontFamily="/View/Fonts/#Comic Sans MS"
                                Foreground="White" 
                                VerticalAlignment="Center"
                                FontSize="16"
@@ -275,10 +275,10 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="FontFamily" Value="/View/Resource/Fonts/#Mariupol" />
+        <Setter Property="FontFamily" Value="/View/Fonts/#Comic Sans MS" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Foreground" Value="PeachPuff" />
+        <Setter Property="Foreground" Value="{StaticResource Sage}" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontSize" Value="16" />

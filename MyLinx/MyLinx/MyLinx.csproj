@@ -172,9 +172,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\MainWindow.cs" />
-    <Compile Include="Tools\DataTemplate.xaml.cs">
-      <DependentUpon>DataTemplate.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
     <Compile Include="Tools\ViewModelBase.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
@@ -241,6 +239,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="View\Fonts\Comic Sans MS.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
