@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MyLinx.View
 {
     /// <summary>
-    /// Логика взаимодействия для _132.xaml
+    /// Логика взаимодействия для Macros.xaml
     /// </summary>
-    public partial class _132 : Page
+    public partial class Macros : Page
     {
-        public _132()
+        public Macros()
         {
             InitializeComponent();
         }

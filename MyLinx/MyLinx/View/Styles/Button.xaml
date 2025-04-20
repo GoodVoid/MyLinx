@@ -6,6 +6,8 @@
     <SolidColorBrush x:Key="Sage" Color="#CACAAA"></SolidColorBrush>
     <SolidColorBrush x:Key="Ebony" Color="#626D58"></SolidColorBrush>
     <SolidColorBrush x:Key="Reseda" Color="#646F4B"></SolidColorBrush>
+    <SolidColorBrush x:Key="Dark_Reseda" Color="#64644B" ></SolidColorBrush>
+    <SolidColorBrush x:Key="Darker_Reseda" Color="#64554B"></SolidColorBrush>
  
     <Style x:Key="Radiobtn" TargetType="RadioButton">
 
@@ -93,7 +95,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#626d58" />
+                                    Value="{StaticResource Darker_Reseda}" />
 
                             <Setter Property="Visibility"
                                     TargetName="Indicator"
@@ -108,17 +110,18 @@
 
     </Style>
 
-    <Style x:Key="AnimatedButtonStyle" TargetType="Border">
-        <Setter Property="Background" Value="#202020" />
+    <Style x:Key="BorderButtonStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Dark_Reseda}" />
         <Setter Property="CornerRadius" Value="8" />
+        
         <Style.Triggers>
             <EventTrigger RoutedEvent="MouseEnter">
                 <BeginStoryboard>
                     <Storyboard>
                         <ColorAnimation 
                         Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                        From="#202020" 
-                        To="#3f3f40" 
+                        From="#64644B" 
+                        To="#64554B" 
                         Duration="0:0:0.1" />
                     </Storyboard>
                 </BeginStoryboard>
@@ -128,36 +131,8 @@
                     <Storyboard>
                         <ColorAnimation 
                         Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                        From="#3f3f40" 
-                        To="#202020" 
-                        Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-        </Style.Triggers>
-    </Style>
-    <Style x:Key="AnimatedButtonStyleCopy" TargetType="Border">
-        <Setter Property="Background" Value="#3f3f40" />
-        <Setter Property="CornerRadius" Value="8" />
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="MouseEnter">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <ColorAnimation 
-                        Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                        From="#3f3f40" 
-                        To="#202020" 
-                        Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="MouseLeave">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <ColorAnimation 
-                        Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                        From="#202020" 
-                        To="#3f3f40" 
+                        From="#64554B" 
+                        To="#64644B" 
                         Duration="0:0:0.1" />
                     </Storyboard>
                 </BeginStoryboard>
@@ -165,34 +140,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="AnimatedButtonStyleAllPasses" TargetType="Border">
-        <Setter Property="Background" Value="#1a1a1d" />
-        <Setter Property="CornerRadius" Value="8" />
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="MouseEnter">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <ColorAnimation 
-                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                    From="#1a1a1d" 
-                    To="#404040" 
-                    Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="MouseLeave">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <ColorAnimation 
-                    Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" 
-                    From="#404040" 
-                    To="#1a1a1d" 
-                    Duration="0:0:0.1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-        </Style.Triggers>
-    </Style>
 
     <Style x:Key="ForBorderPassLen" TargetType="Border">
         <Setter Property="BorderBrush" Value="#636364" />
@@ -270,14 +217,13 @@
     </Style>
 
     <Style x:Key="ButtonSimp" TargetType="Button">
-        <Setter Property="Background" Value="#202020" />
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource Reseda}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="FontFamily" Value="/View/Fonts/#Comic Sans MS" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{StaticResource Sage}" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -290,14 +236,46 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="buttonBorder" Property="Background" Value="#3f3f40" />
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource Dark_Reseda}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="buttonBorder" Property="Background" Value="#636364" />
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource Darker_Reseda}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="ButtonSimp1" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="/View/Fonts/#Comic Sans MS" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource Sage}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder" Background="{TemplateBinding Background}" CornerRadius="8">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource Darker_Reseda}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="#64504B" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

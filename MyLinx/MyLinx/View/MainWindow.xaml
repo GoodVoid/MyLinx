@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:vm="clr-namespace:MyLinx.ViewModel"
+        xmlns:m="clr-namespace:MyLinx.Model"
         mc:Ignorable="d"
         Height="680" Width="1080"
         Title="MyLinx"
@@ -13,6 +15,11 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         >
+
+    <Window.DataContext>
+        <vm:NavigationVM/>
+    </Window.DataContext>
+    
     <Border Background="{StaticResource Reseda}" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -23,16 +30,40 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
+
+            <Grid Grid.Column="1" Grid.Row ="1">
+
+                <ContentControl x:Name="Pages" 
+                                Content="{Binding CurrentView}" />
+            </Grid>
+
             <TextBlock Text="MyLinx"
                        FontSize="30"
                        Style="{StaticResource TextStyle}"
                        Margin="20,0,0,0"
                        />
-
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Column="1" Height="35" Width="120" VerticalAlignment="Center" HorizontalAlignment="Right" Margin ="0,0,10,0 ">
+                <Grid Height="35" Width="35" HorizontalAlignment="Right" Margin="0,0,0,0">
+                    <Border Style="{StaticResource BorderButtonStyle}">
+                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding CloseCommand}">
+                            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Margin="0" Kind="Close"/>
+                        </Button>
+                    </Border>
+                </Grid>
+                <Grid Height="35" Width="35" HorizontalAlignment="Center" Margin="0,-35,0,0">
+                    <Border Style="{StaticResource BorderButtonStyle}">
+                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding MinimizeCommand}" >
+                            <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Margin="0" Kind="WindowMinimize"/>
+                        </Button>
+                    </Border>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
                 <RadioButton
                              Height="50"
                              Style="{StaticResource Radiobtn}"
+                             IsChecked="True"
                     >
                     <Grid>
                     <iconPacks:PackIconMaterial Kind="SunAngle" Style="{StaticResource ImageStyle}"/>
@@ -71,7 +102,7 @@
                     </Grid>
                 </RadioButton>
             </StackPanel>
+
         </Grid>
-        
     </Border>
 </Window>

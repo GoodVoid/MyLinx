@@ -12,4 +12,14 @@
         <Setter Property="Foreground" Value="{StaticResource Sage}" />
     </Style>
 
+    <Style x:Key="IconStyle" TargetType="iconPacks:PackIconMaterial">
+
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Foreground" Value="{StaticResource Sage}" />
+
+    </Style>
+
 </ResourceDictionary>
