@@ -4,5 +4,17 @@
                     xmlns:view="clr-namespace:MyLinx.View"
                     >
 
-    
+    <DataTemplate DataType="{x:Type vm:MacrosVM}">
+        <view:Macros />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ScriptsVM}">
+        <view:Scripts />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SettingsVM}">
+        <view:Settings />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ErrorWindowVM}">
+        <view:ErrorMessageWindow/>
+    </DataTemplate>
+
 </ResourceDictionary>

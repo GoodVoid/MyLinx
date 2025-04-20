@@ -171,10 +171,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\MacroItem.cs" />
     <Compile Include="Model\Macros.cs" />
     <Compile Include="Model\MainWindow.cs" />
     <Compile Include="Model\Scripts.cs" />
     <Compile Include="Model\Settings.cs" />
+    <Compile Include="Model\TextToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\ErrorWindowVM.cs" />
     <Compile Include="ViewModel\MacrosVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
@@ -182,12 +185,19 @@
     <Compile Include="Tools\ViewModelBase.cs" />
     <Compile Include="ViewModel\ScriptsVM.cs" />
     <Compile Include="ViewModel\SettingsVM.cs" />
+    <Compile Include="View\ErrorMessageWindow.xaml.cs">
+      <DependentUpon>ErrorMessageWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Scripts.xaml.cs">
       <DependentUpon>Scripts.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\ErrorMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Macros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

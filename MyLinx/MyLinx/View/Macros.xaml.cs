@@ -18,11 +18,16 @@ namespace MyLinx.View
     /// <summary>
     /// Логика взаимодействия для Macros.xaml
     /// </summary>
-    public partial class Macros : Page
+    public partial class Macros : UserControl
     {
         public Macros()
         {
             InitializeComponent();
+        }
+
+        private void Open(object sender, RoutedEventArgs e)
+        {
+            ErrorMessageWindow.ShowError(SearchTxtBox.Text);
         }
     }
 }

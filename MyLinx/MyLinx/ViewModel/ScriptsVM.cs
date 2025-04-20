@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyLinx.ViewModel
 {
-    class ScriptsVM
+    class ScriptsVM : Tools.ViewModelBase
     {
+
+        public ScriptsVM()
+        {
+
+        }
+
     }
 }

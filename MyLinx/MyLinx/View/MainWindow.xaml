@@ -23,8 +23,8 @@
     <Border Background="{StaticResource Reseda}" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="270"/>
+                <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
@@ -46,58 +46,61 @@
             <StackPanel Grid.Column="1" Height="35" Width="120" VerticalAlignment="Center" HorizontalAlignment="Right" Margin ="0,0,10,0 ">
                 <Grid Height="35" Width="35" HorizontalAlignment="Right" Margin="0,0,0,0">
                     <Border Style="{StaticResource BorderButtonStyle}">
-                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding CloseCommand}">
+                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding CloseCommand}" Cursor="Hand" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
                             <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Margin="0" Kind="Close"/>
                         </Button>
                     </Border>
                 </Grid>
                 <Grid Height="35" Width="35" HorizontalAlignment="Center" Margin="0,-35,0,0">
                     <Border Style="{StaticResource BorderButtonStyle}">
-                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding MinimizeCommand}" >
+                        <Button Style="{StaticResource ButtonSimp1}" Background="Transparent" Command="{Binding MinimizeCommand}" Cursor="Hand" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" >
                             <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Margin="0" Kind="WindowMinimize"/>
                         </Button>
                     </Border>
                 </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <StackPanel Margin="10 0 0 0" Grid.Row="1" VerticalAlignment="Center">
                 <RadioButton
                              Height="50"
                              Style="{StaticResource Radiobtn}"
                              IsChecked="True"
                     >
-                    <Grid>
-                    <iconPacks:PackIconMaterial Kind="SunAngle" Style="{StaticResource ImageStyle}"/>
-                    <TextBlock Text="Home" Style="{StaticResource RadioButtonText}">
+                    <Grid HorizontalAlignment="Left" Width="250">
+                    <iconPacks:PackIconMaterial Kind="WindowShutter"  Style="{StaticResource ImageStyle}"/>
+                    <TextBlock Text="Главная" Style="{StaticResource RadioButtonText}">
                     </TextBlock>
                     </Grid>
                 </RadioButton>
                 <RadioButton
                              Height="50"
                              Style="{StaticResource Radiobtn}"
+                            Command="{Binding MacrosCommand}"
                     >
                     <Grid>
-                        <iconPacks:PackIconMaterial Kind="SunAngle" Style="{StaticResource ImageStyle}"/>
-                        <TextBlock Text="Macros" Style="{StaticResource RadioButtonText}">
+                        <iconPacks:PackIconMaterial Kind="Keyboard" Style="{StaticResource ImageStyle}"/>
+                        <TextBlock Text="Макросы" Style="{StaticResource RadioButtonText}">
                         </TextBlock>
                     </Grid>
                 </RadioButton>
                 <RadioButton
                              Height="50"
                              Style="{StaticResource Radiobtn}"
+                             Command="{Binding ScriptsCommand}"
                     >
                     <Grid>
-                        <iconPacks:PackIconMaterial Kind="SunAngle" Style="{StaticResource ImageStyle}"/>
-                        <TextBlock Text="Home" Style="{StaticResource RadioButtonText}">
+                        <iconPacks:PackIconMaterial Kind="ScriptText" Style="{StaticResource ImageStyle}"/>
+                        <TextBlock Text="Скрипты" Style="{StaticResource RadioButtonText}">
                         </TextBlock>
                     </Grid>
                 </RadioButton>
                 <RadioButton
                              Height="50"
                              Style="{StaticResource Radiobtn}"
+                             Command="{Binding SettingsCommand}"
                     >
                     <Grid>
-                        <iconPacks:PackIconMaterial Kind="SunAngle" Style="{StaticResource ImageStyle}"/>
-                        <TextBlock Text="Home" Style="{StaticResource RadioButtonText}">
+                        <iconPacks:PackIconMaterial Kind="Cog" Style="{StaticResource ImageStyle}"/>
+                        <TextBlock Text="Настройки" Style="{StaticResource RadioButtonText}">
                         </TextBlock>
                     </Grid>
                 </RadioButton>
