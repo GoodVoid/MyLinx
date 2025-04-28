@@ -9,5 +9,6 @@ namespace MyLinx.ViewModel
 {
     class MainWindowVM : ViewModelBase
     {
+
     }
 }

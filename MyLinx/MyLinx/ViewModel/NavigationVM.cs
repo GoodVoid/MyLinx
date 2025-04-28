@@ -12,6 +12,7 @@ using MahApps.Metro.IconPacks.Converter;
 
 namespace MyLinx.ViewModel
 {
+   
     class NavigationVM : ViewModelBase
     {
         private object _currentView;
@@ -29,7 +30,7 @@ namespace MyLinx.ViewModel
 
 
         //private void Macros(object obj) => CurrentView = new MacrosVM();
-        private void MainMenu(object obj) => CurrentView = new MainWindowVM();
+        private void MainMenu(object obj) => CurrentView = new MainMenuVM();
         private void Scripts(object obj) => CurrentView = new ScriptsVM();
         private void Macros(object obj) => CurrentView = new MacrosVM();
         private void Settings(object obj) => CurrentView = new SettingsVM();
@@ -47,6 +48,8 @@ namespace MyLinx.ViewModel
             ((Window)obj).Close();
         }
 
+
+
         public NavigationVM()
         {
             //MacrosCommand = new RelayCommand(Macros);
@@ -57,7 +60,7 @@ namespace MyLinx.ViewModel
             MacrosCommand = new RelayCommand(Macros);
             SettingsCommand = new RelayCommand(Settings);
             //начальная страница
-            CurrentView = new MainWindowVM();
+            CurrentView = new MainMenuVM();
         }
     }
 }

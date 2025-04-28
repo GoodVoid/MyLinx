@@ -1,14 +1,73 @@
-﻿<Page x:Class="MyLinx.View.Settings"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MyLinx.View"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Settings">
+﻿<UserControl x:Class="MyLinx.View.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:MyLinx.ViewModel"
+             d:DesignHeight="680" d:DesignWidth="810"
+             Style="{StaticResource PageStyle}">
+
+    <UserControl.DataContext>
+        <vm:SettingsVM/>
+    </UserControl.DataContext>
 
     <Grid>
-        
+        <Border CornerRadius="0 20 20 0" Background="{StaticResource Dark_Reseda}" Padding="20">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+
+                    <TextBlock Style="{StaticResource TextStyleText}" Text="Настройки" FontSize="24" Foreground="{StaticResource Sage}" Margin="0 0 0 20"/>
+
+                    <!-- Запуск с Windows -->
+                    <CheckBox FontFamily="Comic Sans MS" FontSize="18" Foreground="{StaticResource Sage}" Content="Запускать при старте системы" IsChecked="{Binding RunAtStartup}" Margin="0 10"/>
+
+                    <!-- Горячая клавиша -->
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="Горячая клавиша:" VerticalAlignment="Center" Width="150"/>
+                        <TextBox Margin="5 0 0 0" Width="150" Text="{Binding GlobalHotkey}" />
+                    </StackPanel>
+
+                    <!-- Папка по умолчанию -->
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="Папка макросов:" VerticalAlignment="Center" Width="150"/>
+                        <TextBox Width="250" Text="{Binding DefaultMacroPath}" Margin="0 0 10 0"/>
+                        <Button Content="..." Width="30" Command="{Binding SelectFolderCommand}" />
+                    </StackPanel>
+
+                    <!-- Скорость воспроизведения -->
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="Скорость воспроизведения:" Width="240" VerticalAlignment="Center"/>
+                        <ComboBox Width="150" SelectedItem="{Binding PlaybackSpeed}">
+                            <ComboBoxItem Content="Медленно"/>
+                            <ComboBoxItem Content="Нормально"/>
+                            <ComboBoxItem Content="Быстро"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!-- Повтор макроса -->
+                    <CheckBox FontFamily="Comic Sans MS" FontSize="18" Foreground="{StaticResource Sage}" Content="Повторять макрос N раз" IsChecked="{Binding RepeatMacro}" Margin="0 10"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="Количество повторов:" Width="195" VerticalAlignment="Center"/>
+                        <TextBox Width="50" Text="{Binding RepeatCount}" />
+                    </StackPanel>
+
+                    <!-- Задержка перед запуском -->
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="Задержка перед стартом:" Width="220" VerticalAlignment="Center"/>
+                        <TextBox Width="50" Text="{Binding DelayBeforeStart}" />
+                        <TextBlock Style="{StaticResource TextStyleText}" Text="сек." VerticalAlignment="Center" Margin="5 0"/>
+                    </StackPanel>
+
+                    <!-- Кнопки управления -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
+                        <Button Content="Сбросить" Width="100" Margin="0,0,10,0" Command="{Binding ResetSettingsCommand}" Style="{StaticResource ButtonSimp12}" />
+                        <Button Content="Сохранить" Width="100" Command="{Binding SaveSettingsCommand}" Style="{StaticResource ButtonSimp12}" />
+                    </StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
     </Grid>
-</Page>
+
+</UserControl>

@@ -16,5 +16,8 @@
     <DataTemplate DataType="{x:Type vm:ErrorWindowVM}">
         <view:ErrorMessageWindow/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:MainMenuVM}">
+        <view:MainMenu/>
+    </DataTemplate>
 
 </ResourceDictionary>

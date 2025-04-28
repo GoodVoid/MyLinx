@@ -39,19 +39,17 @@
                             </MultiBinding>
                         </TextBlock.Visibility>
                     </TextBlock>
-                    <Button Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 45 0" Style="{StaticResource ButtonSort}" Background="{StaticResource Darker_Reseda}">
+                    <Button Width="45" Height="45" HorizontalAlignment="Right" Margin="0 0 45 0" Style="{StaticResource ButtonSort}" Background="{StaticResource Darker_Reseda}" Cursor="Hand">
                         <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Kind="Sort" />
                     </Button>
-                    <Button Width="45" Height="45" HorizontalAlignment="Right" Style="{StaticResource ButtonSearch}" Background="{StaticResource Darker_Reseda}" Cursor="Hand" Click="Open">
+                    <Button Width="45" Height="45" HorizontalAlignment="Right" Style="{StaticResource ButtonSearch}" Background="{StaticResource Darker_Reseda}" Cursor="Hand">
                         <iconPacks:PackIconMaterial Style="{StaticResource IconStyle}" Kind="Magnify"/>
                     </Button>
                 </Grid>
                 <Grid Grid.Row="0" Width="200" VerticalAlignment="Center" HorizontalAlignment="Right" Height="60" Margin="0 0 10 0">
-                    <Border Style="{StaticResource BorderButtonStyle}" Background="{StaticResource Darker_Reseda}">
-                        <Button Style="{StaticResource ButtonSimp1}">
+                        <Button Style="{StaticResource ButtonSimp12}" Height="60" Width="200" >
                             <TextBlock Text="Добавить" Style="{StaticResource TextStyleText}"/>
                         </Button>
-                    </Border>
                 </Grid>
 
                 <ScrollViewer Grid.Row="1" 

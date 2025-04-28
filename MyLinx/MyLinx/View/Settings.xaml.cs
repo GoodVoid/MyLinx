@@ -18,7 +18,7 @@ namespace MyLinx.View
     /// <summary>
     /// Логика взаимодействия для Settings.xaml
     /// </summary>
-    public partial class Settings : Page
+    public partial class Settings : UserControl
     {
         public Settings()
         {

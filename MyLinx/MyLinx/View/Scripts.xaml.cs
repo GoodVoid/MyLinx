@@ -18,7 +18,7 @@ namespace MyLinx.View
     /// <summary>
     /// Логика взаимодействия для Scripts.xaml
     /// </summary>
-    public partial class Scripts : Page
+    public partial class Scripts : UserControl
     {
         public Scripts()
         {
